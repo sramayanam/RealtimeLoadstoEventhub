@@ -6,4 +6,3 @@ val streamingInputDF = spark.readStream.options(eventHubsConf.toMap).format("org
 val streamingQuery1 = streamingInputDF.writeStream.outputMode("append").option("checkpointLocation", "wasbs://checkpoint@srramobstorage.blob.core.windows.net/checkpoint1").format("parquet").option("path","wasbs://data@srramobstorage.blob.core.windows.net/telemetryOutput1").start()
 
 
-https://srramobstorage.blob.core.windows.net/data
